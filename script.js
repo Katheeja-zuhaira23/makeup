@@ -1,9 +1,11 @@
 
-function news() {
+function cosmetic() {
   // Get the value of the input field
-  // let category = document.getElementsByClassName("category")[0].value;
+  let brand = document.getElementsByClassName("brand")[0].value;
+  let category = document.getElementsByClassName("category")[0].value;
 
-  let url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl&product_type=lipstick`
+
+  let url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}&product_type=${category}`
 
   fetch(url)
     .then(response => {
@@ -12,12 +14,20 @@ function news() {
     .then(data => {
       console.log(data);
 
-      // let synonym = document.getElementsByClassName("synonym")[0]
-      // synonym.innerHTML = `<div class="card">
-      //   <div class="card-body">
-      //     SYNONYMS: <br><br>${data[0].meanings[0].synonyms}
-      //   </div>
-      // </div>`
+      let makeup = document.getElementsByClassName("makeup")[0]
+      makeup.innerHTML = `<div class="card" style="width: 18rem;">
+        <img src="https://www.marketing91.com/wp-content/uploads/2018/05/Cosmetic-Brands.jpg" class="card-img-top" alt="weather image">
+        <div class="card-body">
+          <h5 class="card-title">COSMETIC DETAILS</h5>
+          <p class="card-text">BRAND: ${data[0].brand} </p>
+          <p class="card-text">CATEGORY: ${data[0].name} </p>
+          <p class="card-text">DESCRIPTION: ${data[0].description} </p>
+          <p class="card-text">PRICE: $${data[0].price} </p>
+          <p class="card-text">RATINGS: ${data[0].rating} </p>
+
+
+        </div>
+      </div>`
     })
 
     .catch(error => {
@@ -26,4 +36,3 @@ function news() {
 
 }
 
-news()

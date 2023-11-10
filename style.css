@@ -1,5 +1,5 @@
 body{
-    background-color: dimgrey!important;
+    background-color: pink!important;
     position: relative;
 
 }
@@ -10,7 +10,7 @@ body{
     margin-left: 25%;
 }
 
-.synonym{
+.makeup{
     position: absolute;
     margin-top: 5%;
     margin-left: 25%;
