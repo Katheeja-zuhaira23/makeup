@@ -22,9 +22,9 @@ function cosmetic() {
           <p class="card-text">BRAND: ${data[0].brand} </p>
           <p class="card-text">CATEGORY: ${data[0].name} </p>
           <p class="card-text">DESCRIPTION: ${data[0].description} </p>
-          <p class="card-text">PRICE: $${data[0].price} </p>
+          <p class="card-text">PRICE: $ ${data[0].price} </p>
           <p class="card-text">RATINGS: ${data[0].rating} </p>
-
+          <p class="card-text">: ${data[0].tag_list} </p>
 
         </div>
       </div>`
@@ -35,4 +35,4 @@ function cosmetic() {
     });
 
 }
-
+cosmetic()
